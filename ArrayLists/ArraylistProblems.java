@@ -87,6 +87,27 @@ public class ArraylistProblems {
         System.out.println("The new filtered list is "+list);
     }
 
+    public static void reverseList(ArrayList<Integer> list) {
+        // Loop runs from the start to the middle of the list
+        for (int i = 0; i < list.size() / 2; i++) {
+            // --- The Swap Logic ---
+
+            // 1. Get the left and right indices
+            int leftIndex = i;
+            int rightIndex = list.size() - 1 - i;
+
+            // 2. Read the values at both indices and store the left one
+            int leftValue = list.get(leftIndex);
+            int rightValue = list.get(rightIndex);
+
+            // 3. Perform the swap using .set()
+            list.set(leftIndex, rightValue);
+            list.set(rightIndex, leftValue);
+
+            System.out.println(list);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> list = new ArrayList<>();
@@ -106,7 +127,8 @@ public class ArraylistProblems {
 //        int largest = findLargestNumber(list);
 //        ArrayList<Integer>  evenNumbers = filterEvenList(list);
 //        int evenSum = evenElementSum(list);
-        removeDuplicateList(list);
+//        removeDuplicateList(list);
+        reverseList(list);
 
         // Print the result here
 //        System.out.println("The sum of the list is: " + total);

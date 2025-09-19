@@ -1,1 +1,1 @@
-## Notes for ArrayLists
+## Stack and Queues notes

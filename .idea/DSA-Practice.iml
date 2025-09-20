@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/ArrayLists" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/HashMaps" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/StackandQueues" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/HashSets" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

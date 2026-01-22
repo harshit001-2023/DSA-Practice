@@ -4,12 +4,14 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/ArrayLists" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/HashMaps" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/HashMaps" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/StackandQueues" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/HashSets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tree" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Trees" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

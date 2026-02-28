@@ -17,7 +17,7 @@ public static int fixedSize(int[] nums, int k){
     }
     return windowSum;
 }
-/*
+
 public static int variable(int[] nums, int k){
     int windowSum = 0;
     int n = nums.length - 1, result = 0;
@@ -26,12 +26,19 @@ public static int variable(int[] nums, int k){
     for (int right = 0; right < n; right++) {
         // expand window by including nums[right]
 
-        while (window_condition_violated) {
-            // shrink window from left
-            left++;
+        while (left <= right) {
+            if (nums[left] == nums[right]) {
+                windowSum += nums[left];
+                left++;
+            }
         }
 
         // update result
+        if (windowSum == k) {
+            result = Math.max(result, windowSum);
+            windowSum = 0;
+        }
     }
+    return result;
 }
-*/
+

@@ -1,7 +1,8 @@
-static void main() {
+void main() {
     int[] nums = {1, 2, 3, 4, 6};
     int k = 3;
-    IO.println(fixedSize(nums, k));
+//    IO.println(fixedSize(nums, k));
+    IO.println(variableSize(nums, k));
 }
 public static int fixedSize(int[] nums, int k){
     // Fixed-size window
@@ -18,7 +19,7 @@ public static int fixedSize(int[] nums, int k){
     return windowSum;
 }
 
-public static int variable(int[] nums, int k){
+public static int variableSize(int[] nums, int k){
     int windowSum = 0;
     int n = nums.length - 1, result = 0;
     // Variable-size window

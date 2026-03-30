@@ -22,33 +22,82 @@ Constraints:
 Expected Complexities
 Time Complexity: O(n)
 Auxiliary Space: O(1)*/
-
-public static class RotateArray {
-    static void rotateArr(int arr[], int d) {
-        int n = arr.length;
-        d = d%n;
-
-        reverse(arr, 0, d - 1);
-        reverse(arr, d, n - 1);
-        reverse(arr, 0, n - 1);
-
-        System.out.println(Arrays.toString(arr));
-
-    }
-
-    static void reverse(int[] arr, int start, int end){
-        while(start < end){
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
-    }
-}
-
 void main(){
     int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int d = 2;
-    RotateArray.rotateArr(arr, d);
+    rotateArr(arr, d);
+    rotateArr1(arr, d);
+    rotateArr2(arr, d);
+}
+
+static void rotateArr(int[] arr, int d) {
+    int n = arr.length;
+    d = d%n;
+
+    reverse(arr, 0, d - 1);
+    reverse(arr, d, n - 1);
+    reverse(arr, 0, n - 1);
+
+    System.out.println(Arrays.toString(arr));
+
+}
+
+private static void reverse(int[] arr, int start, int end){
+    while(start < end){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+static void rotateArr1(int[] arr, int d) {
+    int n = arr.length;
+    d = d%n;
+
+    int[] temp = new int[n];
+
+    for(int i = 0; i < n; i++){
+        temp[i] = arr[(d+i) % n];
+    }
+
+    System.out.println(Arrays.toString(arr));
+}
+
+static void rotateArr2(int[] arr, int d) {
+    int n = arr.length;
+    d = d % n;
+    int[] temp = new int[n];
+
+    // Copy elements from index d to end into the beginning of temp
+    for (int i = 0; i < n - d; i++) {
+        temp[i] = arr[d + i];
+    }
+
+    // Copy elements from 0 to d-1 to the end of temp
+    for (int i = 0; i < d; i++) {
+        temp[n - d + i] = arr[i];
+    }
+
+    // Copy temp back to original array
+    for (int i = 0; i < n; i++) {
+        arr[i] = temp[i];
+    }
+
+    System.out.println(Arrays.toString(arr));
+}
+
+static void rotateArr3(int[] arr, int d) {
+    int n = arr.length;
+    d = d%n;
+    int[] temp = new int[n];
+
+    if (n - d >= 0) System.arraycopy(arr, d, temp, 0, n - d);
+
+    if (d >= 0) System.arraycopy(temp, 0, arr, n - d, d);
+
+    System.arraycopy(temp, 0, arr, 0, n);
+
+    System.out.println(Arrays.toString(arr));
 }
